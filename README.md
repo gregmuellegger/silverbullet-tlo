@@ -1,5 +1,8 @@
 # silverbullet-tlo
 
+> [!WARNING]  
+> This is a totally vibe-coded plug so far. It kind of works but the architecture and featureset has not been proofen useful yet. Use at your own risk.
+
 Live [Tiny Little Office](https://tinylittleoffice.com) documents inside [SilverBullet](https://silverbullet.md) pages. A ` ```tlo ` fence renders as a spreadsheet, document, deck, drawing or any other TLO app. Edits are saved back into the Markdown as you type.
 
 ````markdown

@@ -8,6 +8,7 @@
   "engines": { "node": ">=24" },
   "scripts": {
     "build": "./build-lib.sh && ./build.sh",
+    "dev": "./dev.sh",
     "test": "node --test test/*.test.js",
     "test:e2e": "node test/e2e.mjs"
   }

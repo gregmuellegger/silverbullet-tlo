@@ -48,7 +48,10 @@ npm run build            # editors from upstream source, then dist/plug
 test/fetch-tools.sh      # SilverBullet and headless Chrome into .tools/ (Linux x86_64)
 npm run test:e2e         # installs dist/plug into a throwaway space and drives real Chrome
 ./build.sh ~/my-space    # installs dist/plug into a space
+./dev.sh                 # serves .dev/space on http://127.0.0.1:3000 and rebuilds on every change
 ```
+
+`./dev.sh` needs `dist/lib` and `.tools/`, not Node. It seeds a page per app, and open tabs reload about 2 seconds after you save a file in `src/`. Set `TLO_DEV_PORT` to change the port, and delete `.dev` to start over.
 
 `UPSTREAM` pins the TLO commit. To release, bump `version` in `package.json`, then push a tag such as `v0.1.0`: the release workflow tests the code, updates the `dist` branch that installs read from, and creates the GitHub release.
 

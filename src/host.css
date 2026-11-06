@@ -1,0 +1,19 @@
+/* Added once to SilverBullet's page. A widget marks its own iframe with data-tlo. */
+.cm-line:has(iframe[data-tlo]) .sb-actions:has(.sb-code-copy-button) { display: none; }
+/* Enlarged, the iframe stays in its place in the DOM and leaves the flow, so its line keeps the height it had. */
+.cm-line:has(iframe[data-tlo-full]) { min-height: var(--tlo-held-height); box-sizing: border-box; }
+iframe[data-tlo-full] {
+  --tlo-gap: 16px;
+  position: fixed !important;
+  inset: var(--tlo-gap) !important;
+  width: calc(100vw - 2 * var(--tlo-gap)) !important;
+  height: calc(100dvh - 2 * var(--tlo-gap)) !important;
+  max-width: none !important;
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0;
+  overflow: hidden;
+  z-index: 2147483000;
+  background: var(--root-background-color, Canvas);
+}
+iframe[data-tlo-full]::backdrop { background: rgb(0 0 0 / 60%); }

@@ -1,0 +1,16 @@
+html, body { margin: 0; padding: 0; height: auto; overflow: hidden; background: transparent; }
+#tlo-root { display: flex; flex-direction: column; height: 520px; min-height: 200px; overflow: hidden; resize: vertical;
+  border: 1px solid #8884; border-radius: 6px; font: 13px/1.4 system-ui, sans-serif; box-sizing: border-box; }
+#tlo-bar { display: flex; align-items: center; gap: 10px; padding: 4px 8px; border-bottom: 1px solid #8884; }
+.tlo-spacer { flex: 1; }
+#tlo-status[data-kind="dirty"] { color: #b45309; }
+#tlo-status[data-kind="error"] { color: #dc2626; }
+#tlo-bar a { color: inherit; }
+#tlo-bar button { font: inherit; }
+#tlo-doc { flex: 1; min-height: 0; position: relative; }
+/* <to-chrome> brings the document's header, Share and the menu. The widget's bar replaces them. */
+#tlo-doc to-chrome { position: absolute; inset: 0; height: auto; }
+#tlo-doc :is(.to-header, .to-burger, .to-share-btn) { display: none; }
+/* Enlarged, the page keeps measuring the normal height and #tlo-root floats over it, filling the iframe. */
+html[data-tlo-full] body { height: var(--tlo-normal-height); }
+html[data-tlo-full] #tlo-root { position: fixed; inset: 0; height: auto !important; resize: none; }
